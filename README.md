@@ -2,7 +2,7 @@
 
 **Man-In-The-Middle** Software Made Using Scapy with Python3
 
-## Gerekli Paketlerin kurulması :
+## Installing Required Packages:
 ```
 - pip3 install scapy
 - pip3 install scapy_http
