@@ -1,13 +1,13 @@
-# Simple Mitm Framework
+# Simple Mitmf Framework
 
-Python3 ile Scapy Kullanarak Yapılmış **Man-In-The-Middle** Yazılımı
+**Man-In-The-Middle** Software Made Using Scapy with Python3
 
 ## Gerekli Paketlerin kurulması :
 ```
 - pip3 install scapy
 - pip3 install scapy_http
 
-OR ( Ya da )
+OR 
 
 - pip3 install -r requirements.txt
 ```
@@ -21,7 +21,7 @@ OR ( Ya da )
 
 # Arp_Poison.py
 
->- ARP Paketleri Yollayarak **ARP Zehirlemesi** Gerçekleştirir.
+>- Performs **ARP Poisoning** by Sending ARP Packets.
 
 ## Kullanım :
 
@@ -32,37 +32,37 @@ OR ( Ya da )
 
 # Listener.py
 
-> - ARP Zehirlenmesinden Sonra Tüm **HTTP** paketlerini Yakalar ve Ekrana Yazdırır.
+> - Captures and Prints All **HTTP** Packets After ARP Poisoning.
 
-## Kullanım : 
+## Usage : 
 ```
 - python3 listener.py -i wlan0
 ```
 
-**Listener.py** yerine Herhangi Bir Ağ Dineleme Yazılımı Kullanabilirsiniz. Örn: **Wireshark**
+Instead of **Listener.py** You Can Use Any Network Listening Software. Ex: **Wireshark**
 
-# HTTPS Atlatmak : 
+# Bypass HTTPS:
 
-## Gerekli Uygulamaların İndirilmesi : 
+## Downloading Required Applications:
 
 ```
 git clone https://github.com/byt3bl33d3r/sslstrip2
 git clone https://github.com/singe/dns2proxy
 ```
 
-## IP Table Konfigürasyonu:
+## IP Table Configuration:
 
-**SSLStrip için :**
+**For SSLStrip:**
 
 ```
 iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
 ```
-**DNS2Proxy için:**
+**For DNS2Proxy:**
 ```
 iptables -t nat -A PREROUTING -p udp --destination-port 53 -j REDIRECT --to-port 53
 ```
 
-## Kullanım : 
+## Usage : 
 ```
 - echo 1 > /proc/sys/net/ipv4/ip_forward
 
