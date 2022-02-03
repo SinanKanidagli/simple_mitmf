@@ -23,7 +23,7 @@ OR
 
 >- Performs **ARP Poisoning** by Sending ARP Packets.
 
-## Kullanım :
+## Usage :
 
 ```
 - python3 arp_poison.py -t x.x.x.x -g x.x.x.x
